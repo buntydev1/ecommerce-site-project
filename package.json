@@ -2,7 +2,7 @@
   "name": "ecommerce-site-project",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "dependencies": {
     "bcrypt": "^5.0.1",
     "cloudinary": "^1.27.1",
@@ -16,9 +16,11 @@
     "mongoose": "^6.0.12",
     "nodemon": "^2.0.15"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon server.js"
   },
   "repository": {
     "type": "git",
