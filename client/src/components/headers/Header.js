@@ -9,8 +9,8 @@ import axios from "axios";
 function Header() {
   const state = useContext(GlobalState);
   console.log(state);
-  const [isLogged, setIsLogged] = state.userAPI.isLogged;
-  const [isAdmin, setIsAdmin] = state.userAPI.isAdmin;
+  const [isLogged] = state.userAPI.isLogged;
+  const [isAdmin] = state.userAPI.isAdmin;
   const [cart] = state.userAPI.cart;
 
   const logoutUser = async () => {
@@ -18,8 +18,7 @@ function Header() {
 
     localStorage.clear();
 
-    setIsAdmin(false);
-    setIsLogged(false);
+    window.location.href = "/";
   };
 
   const adminRouter = () => {
