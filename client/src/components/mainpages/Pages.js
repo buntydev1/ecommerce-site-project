@@ -30,6 +30,11 @@ function Pages() {
         exact
         component={isAdmin ? CreateProduct : NotFound}
       />
+      <Route
+        path="/edit_product/:id"
+        exact
+        component={isAdmin ? CreateProduct : NotFound}
+      />
 
       <Route
         path="/history"
