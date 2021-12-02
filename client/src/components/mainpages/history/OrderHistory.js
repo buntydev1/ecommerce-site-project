@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 function OrderHistory() {
   const state = useContext(GlobalState);
-  const [history, setHistory] = state.userAPI.history;
+  const [history] = state.userAPI.history;
 
   return (
     <div className="history-page">
