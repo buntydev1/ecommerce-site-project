@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Routes, Route } from "react-router-dom";
 import Products from "./products/Products";
 import DetailProduct from "./detailProduct/DetailProduct";
 import Login from "./auth/Login";
