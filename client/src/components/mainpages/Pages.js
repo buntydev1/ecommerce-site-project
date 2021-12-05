@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { BrowserRouter as Routes, Route } from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
 import Products from "./products/Products";
 import DetailProduct from "./detailProduct/DetailProduct";
 import Login from "./auth/Login";
@@ -17,14 +17,24 @@ function Pages() {
   const state = useContext(GlobalState);
   const [isLogged] = state.userAPI.isLogged;
   const [isAdmin] = state.userAPI.isAdmin;
-  return (
-    <Routes>
-      <Route path="/" element={<Products />} />
-      <Route path="/detail/:id" exact element={DetailProduct} />
-      <Route path="/login" exact element={isLogged ? NotFound : Login} />
-      <Route path="/register" exact element={isLogged ? NotFound : Register} />
 
-      <Route path="/category" exact element={isAdmin ? Categories : NotFound} />
+  return (
+    <Switch>
+      <Route path="/" exact component={Products} />
+      <Route path="/detail/:id" exact component={DetailProduct} />
+
+      <Route path="/login" exact component={isLogged ? NotFound : Login} />
+      <Route
+        path="/register"
+        exact
+        component={isLogged ? NotFound : Register}
+      />
+
+      <Route
+        path="/category"
+        exact
+        component={isAdmin ? Categories : NotFound}
+      />
       <Route
         path="/create_product"
         exact
@@ -39,17 +49,18 @@ function Pages() {
       <Route
         path="/history"
         exact
-        element={isLogged ? OrderHistory : NotFound}
+        component={isLogged ? OrderHistory : NotFound}
       />
       <Route
         path="/history/:id"
         exact
-        element={isLogged ? OrderDetails : NotFound}
+        component={isLogged ? OrderDetails : NotFound}
       />
-      <Route path="/cart" element={<Cart />} />
 
-      <Route path="*" element={<NotFound />} />
-    </Routes>
+      <Route path="/cart" exact component={Cart} />
+
+      <Route path="*" exact component={NotFound} />
+    </Switch>
   );
 }
 

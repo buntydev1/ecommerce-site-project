@@ -9,9 +9,9 @@ const initialState = {
   title: "",
   price: 0,
   description:
-    "How  cool CSS effect, Web Design ideas,JavaScript libraries, Node.",
+    "How to and tutorial videos of cool CSS effect, Web Design ideas,JavaScript libraries, Node.",
   content:
-    "Welcome to our ecommerce store here, you can see different products ,you can purchase or you can view any item from the store and online transcation is available",
+    "Welcome to our channel Dev AT. Here you can learn web designing, UI/UX designing, html css tutorials, css animations and css effects, javascript and jquery tutorials and related so on.",
   category: "",
   _id: "",
 };
