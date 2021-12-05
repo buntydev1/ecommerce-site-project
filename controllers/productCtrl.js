@@ -27,6 +27,7 @@ class APIfeatures {
 
     return this;
   }
+
   sorting() {
     if (this.queryString.sort) {
       const sortBy = this.queryString.sort.split(",").join(" ");
@@ -37,6 +38,7 @@ class APIfeatures {
 
     return this;
   }
+
   paginating() {
     const page = this.queryString.page * 1 || 1;
     const limit = this.queryString.limit * 1 || 9;
@@ -45,6 +47,7 @@ class APIfeatures {
     return this;
   }
 }
+
 const productCtrl = {
   getProducts: async (req, res) => {
     try {
@@ -80,6 +83,7 @@ const productCtrl = {
       const product = await Products.findOne({ product_id });
       if (product)
         return res.status(400).json({ msg: "This product already exists." });
+
       const newProduct = new Products({
         product_id,
         title: title.toLowerCase(),

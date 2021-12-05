@@ -14,8 +14,10 @@ function UserAPI(token) {
           const res = await axios.get("/user/infor", {
             headers: { Authorization: token },
           });
+
           setIsLogged(true);
           res.data.role === 1 ? setIsAdmin(true) : setIsAdmin(false);
+
           setCart(res.data.cart);
         } catch (err) {
           alert(err.response.data.msg);
@@ -47,6 +49,7 @@ function UserAPI(token) {
       alert("This product has been added to cart.");
     }
   };
+
   return {
     isLogged: [isLogged, setIsLogged],
     isAdmin: [isAdmin, setIsAdmin],
